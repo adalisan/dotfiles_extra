@@ -1,7 +1,7 @@
 
 # git
 # Source: https://github.com/Parth/dotfiles/blob/master/zsh/keybindings.sh
-	function git_prepare() {
+	git_prepare() {
 		if [ -n "$BUFFER" ];
 			then
 				BUFFER="git add -A; git commit -m \"$BUFFER\" && git push"
@@ -18,7 +18,7 @@
 	bindkey "^g" git_prepare
 
 # up
-	function up_widget() {
+	up_widget() {
 		BUFFER="cd .."
 		zle accept-line
 	}
@@ -26,7 +26,7 @@
 	bindkey "^k" up_widget
 
 # home
-	function goto_home() {
+	goto_home() {
 		BUFFER="cd ~/"$BUFFER
 		zle end-of-line
 		zle accept-line
@@ -35,7 +35,7 @@
 	bindkey "^h" goto_home
 
 # ls
-	function ctrl_l() {
+	ctrl_l() {
 		BUFFER="ls"
 		zle accept-line
 	}
@@ -43,7 +43,7 @@
 	bindkey "^l" ctrl_l
 
 # git status
-	function git_stus() {
+	git_stus() {
 		BUFFER="git status"
 		zle accept-line
 	}
