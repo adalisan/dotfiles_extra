@@ -35,7 +35,11 @@ check_for_software() {
 	fi
 }
 
-echo "Configure and install (if not existed) the CLI essentials:  zsh, nvim, tmux, and fzf"
+dashes="$(printf -- '-%.0s' $(seq 49))"
+
+echo "$dashes"
+echo "Configure and install (if not existed) the CLI essentials:"
+echo "zsh, nvim, tmux, and fzf"
 echo
 echo "Let's get started? (y/N)"
 old_stty_cfg=$(stty -g)
@@ -43,8 +47,10 @@ stty raw -echo
 answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
 stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
+	echo "$answer"
 	echo
 else
+	echo "$answer"
 	echo "Aborting. No change has been made."
 	exit 0
 fi
@@ -59,16 +65,18 @@ echo
 FZF="$(command -v fzf)"
 if [[ "$("$FZF" 2> /dev/null)" == "" ]]; then
 	echo "fzf not found. Installing..."
-	./"$HOME"/dotfiles/zsh/plugins/fzf/install
+	source "$HOME/dotfiles/zsh/plugins/fzf/install"
+else
+	echo "fzf is installed."
 fi
 
 echo "Press [ENTER] to complete linking."
-source "$HOME"/dotfiles/link
+source "$HOME"/dotfiles/zsh/link.sh
 
 # change the default shell:
 # Source: https://github.com/Parth/dotfiles/blob/master/deploy
 check_default_shell() {
-	if [ -z "${SHELL##*zsh*}" ] ;then
+	if [ -z "${SHELL##*zsh*}" ]; then
 			echo "Default shell is zsh."
 	else
 		echo -n "Default shell is not zsh. Do you want to chsh -s \$(which zsh)? (y/N)"
@@ -77,8 +85,10 @@ check_default_shell() {
 		answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
 		stty $old_stty_cfg && echo
 		if echo "$answer" | grep -iq "^y" ;then
+			echo "$answer"
 			chsh -s $(which zsh)
 		else
+			echo "$answer"
 			echo "The configuration will not work properly without zsh."
 	fi
 }
