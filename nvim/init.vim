@@ -90,3 +90,5 @@
 " Disable R_assign <- placement by (_) underscore Nvim-R
 	let R_assign = 0
 
+" Map fzf :Files to <leader>-f
+	nnoremap <leader>f :Files<CR>
