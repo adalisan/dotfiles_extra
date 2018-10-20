@@ -33,6 +33,7 @@ Plug 'SirVer/ultisnips'
 " Text editing
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
+Plug 'plasticboy/vim-markdown'
 
 " Distraction-free writing
 Plug 'junegunn/goyo.vim'
