@@ -61,6 +61,8 @@ check_for_software nvim
 echo
 check_for_software tmux
 echo
+check_for_software ripgrep # ubuntu 16.04 not yet supported
+echo
 # check_for_software fzf (there is no official apt package)
 FZF="$(command -v fzf)"
 if [[ "$("$FZF" 2> /dev/null)" == "" ]]; then
