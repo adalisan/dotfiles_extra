@@ -25,3 +25,7 @@
 	untracked = red bold
 [push]
 	default = simple
+[alias]
+	# enabling git-gui. Source: https://stackoverflow.com/a/12608076
+	gui = !sh -c '/usr/local/git/libexec/git-core/git-gui'
+
