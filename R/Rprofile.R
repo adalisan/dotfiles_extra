@@ -1,12 +1,17 @@
 options(
-	## set editor
-	editor = "vim",
-
-	## disable tcl/tk
-	menu.graphics = FALSE,
-
-	## no fancy quotes
-	useFancyQuotes = FALSE
+  # set editor
+  editor = "vim",
+  
+  # disable tcl/tk
+  menu.graphics = FALSE,
+  
+  # no fancy quotes
+  useFancyQuotes = FALSE, 
+  
+  # warn on partial matches
+  warnPartialMatchAttr = TRUE,
+  warnPartialMatchDollar = TRUE,
+  warnPartialMatchArgs = TRUE
 )
 
 ## more scrolling up in .Rhistory
