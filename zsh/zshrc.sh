@@ -6,6 +6,21 @@ else
 	echo "tmux not installed. Run ./deploy to configure dependencies"
 fi
 
+# Settings
+export VISUAL=vim
+
+source ~/dotfiles/zsh/plugins/fixls.zsh
+
+source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
+source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/key-bindings.zsh
+source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh
+source ~/dotfiles/zsh/plugins/vi-mode.plugin.zsh
+source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source ~/dotfiles/zsh/keybindings.sh
+source ~/dotfiles/zsh/prompt.sh
+
 # Vars
 HISTFILE=~/.zsh_history
 setopt inc_append_history # To save every command before it is executed
@@ -54,21 +69,6 @@ ggshow() {
 		              {}
  				     FZF-EOF"
 }
-
-# Settings
-export VISUAL=vim
-
-source ~/dotfiles/zsh/plugins/fixls.zsh
-
-source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
-source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/key-bindings.zsh
-source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh
-source ~/dotfiles/zsh/plugins/vi-mode.plugin.zsh
-source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-source ~/dotfiles/zsh/keybindings.sh
-source ~/dotfiles/zsh/prompt.sh
 
 # fzf (managed by fzf):
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
