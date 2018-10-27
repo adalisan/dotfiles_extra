@@ -15,6 +15,8 @@ make_link(){
 make_link "$HOME"/.zshrc "$HOME"/dotfiles/zsh/zshrc.sh
 make_link "$HOME"/.tmux.conf "$HOME"/dotfiles/tmux/tmux.conf
 
+make_link "$HOME"/.ripgreprc "$HOME"/dotfiles/tools/ripgreprc
+
 make_link "$HOME"/.gitconfig "$HOME"/dotfiles/git/gitconfig
 make_link "$HOME"/.gitignore "$HOME"/dotfiles/git/gitignore
 

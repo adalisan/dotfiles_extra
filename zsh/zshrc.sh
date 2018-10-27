@@ -70,6 +70,10 @@ ggshow() {
  				     FZF-EOF"
 }
 
+# ripgrep config file defined as an environment variable
+# Source: https://github.com/BurntSushi/ripgrep/blob/0.8.0/GUIDE.md#configuration-file
+export RIPGREP_CONFIG_PATH="$HOME"/.ripgreprc
+
 # fzf (managed by fzf):
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
