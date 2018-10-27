@@ -28,18 +28,18 @@ local({
 # a new hidden environment for the profile
 .Rprofile <- new.env()
 with(.Rprofile, {
-	# add required libraries here
-	libs <- c("devtools", "usethis", "testthat", "microbenchmark")
-	status <- libs %in% utils::installed.packages()
-	if (!all(status)) {
-		cat("package(s) not found in R libs: ", 
-			paste0(libs[!status], collapse = ", "), sep = "\n")
-	}
+	     # add required libraries here
+	     libs <- c("devtools", "usethis", "testthat", "microbenchmark")
+	     status <- libs %in% utils::installed.packages()
+	     if (!all(status)) {
+		     message(sprintf("package(s) not found in R library paths:\n%s",
+				     paste0(libs[!status], collapse = ", ")))
+	     }
 })
 suppressMessages(attach(.Rprofile))
-suppressPackageStartupMessages({
-invisible({
-		unlist(lapply(.Rprofile$libs, require, character.only = TRUE))
+suppressWarnings({
+	suppressPackageStartupMessages({
+		invisible(unlist(lapply(.Rprofile$libs, require, character.only = TRUE)))
 	})
 })
 
