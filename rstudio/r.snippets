@@ -103,9 +103,9 @@ snippet ts
 	`r paste("#", date(), "------------------------------\n")`
 
 snippet header
-	`r paste("###", paste(rep("-", 69), collapse = ""))`
-	`r paste("###")` ${1:TITLE}:
-	`r paste("###", paste(rep("-", 69), collapse = ""))`
+	`r paste("###", paste(rep("-", 65), collapse = ""), "###")`
+	`r paste("###")` ${1:TITLE} ----
+	`r paste("###", paste(rep("-", 65), collapse = ""), "###")`
 	${0}
 
 # SHINY
@@ -121,7 +121,7 @@ snippet shinyapp
 	}
 
 	shinyApp(ui, server)
-	
+
 # NB this is a printf-style debugging esp. useful with input vals
 snippet observe
 	observe(print(paste("${1:object}:", ${1:object})))${0}
