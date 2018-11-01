@@ -1,9 +1,9 @@
 
 # dotfiles
 
-## Installation
-
 Tested on macOS (`xx`) and Debian (`xx`).
+
+## Installation
 
 Having [git](https://git-scm.com/downloads) and the package manager installed,
 which are [brew.sh](https://brew.sh/) for macOS and
@@ -22,6 +22,7 @@ src="https://storage.googleapis.com/blog-media-881/scr-dotfiles.png" width="60%"
 height="60%"></a></p>
 
 
+
 ## Acknowledgments
 
 + https://github.com/Parth/dotfiles
@@ -29,5 +30,6 @@ height="60%"></a></p>
 + https://github.com/jimhester/dotfiles/
 
 + https://github.com/fatih/dotfiles
+
 
 
