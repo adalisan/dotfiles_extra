@@ -31,6 +31,9 @@ make_link "$HOME"/.Rprofile "$HOME"/dotfiles/R/Rprofile.R
 make_link "$HOME"/.config/nvim/init.vim "$HOME"/dotfiles/nvim/init.vim
 make_link "$HOME"/.config/nvim/UltiSnips "$HOME"/dotfiles/nvim/ultisnips/
 
+# Install nvim colorschemes
+make_link "$HOME"/.config/nvim/colors/ "$HOME"/dotfiles/nvim/colors/* # (linking all files)
+
 # Install nvim plugins
 NVIM=$(command -v nvim)
 $NVIM +PlugInstall +qall
