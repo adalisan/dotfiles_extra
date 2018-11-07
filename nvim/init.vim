@@ -92,3 +92,6 @@
 
 " Map fzf :Files to <leader>-f
 	nnoremap <leader>f :Files<CR>
+
+" Use deoplete.
+	" let g:deoplete#enable_at_startup = 1
