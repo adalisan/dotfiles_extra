@@ -1,4 +1,5 @@
-# RStudio snippets https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets
+# RStudio snippets
+# https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets
 
 # BASE
 snippet library
@@ -54,6 +55,23 @@ snippet vapply
 snippet rapply
 	rapply(${1:list}, ${2:function})
 
+snippet do.call
+	do.call(${1:function}, list(${2:list}))
+
+snippet tryCatch
+	tryCatch({
+	  ${0}
+	},
+	error = function(e) {
+	  stop("E.MSG: ", conditionMessage(e))
+	},
+	warning = function(w) {
+	  stop("W.MSG: ", conditionMessage(w))
+	},
+	finally = {
+	  # (optional) expression to be evaluated before returning or exiting.
+	})
+
 # S3 OBJECT SYSTEM
 snippet generic
 	${1:name} <- function(${2:arg}) {
@@ -81,7 +99,7 @@ snippet R6Class
 				public = list(
 				 initialize = function() {
 				 },
-				 ${2:fun} = function(x) {
+				 ${2:function} = function(x) {
 				 		${0}
 				 }
 				),
@@ -122,7 +140,7 @@ snippet shinyapp
 
 	shinyApp(ui, server)
 
-# NB this is a printf-style debugging esp. useful with input vals
+## NB this is a printf-style debugging esp. useful with input vals
 snippet observe
 	observe(print(paste("${1:object}:", ${1:object})))${0}
 
@@ -173,3 +191,9 @@ snippet document
 # TESTING
 snippet test_that
 	test_that("${1:message}", { ${0} })
+
+## NB put dput in editor (e.g. type `$$head(mtcars)` then press TAB - be sure
+## the cursor is at the end of the line.)
+## Source: https://gitlab.com/jozefhajnala/gists/tree/master
+snippet $$
+	`r deparse(eval(parse(text="$$")), width.cutoff = 500L)`
