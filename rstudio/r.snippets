@@ -94,11 +94,14 @@ snippet setClass
 
 # R6 OBJECT SYSTEM
 snippet R6Class
-	${1:name} <- R6Class(
-				classname = ${1:name},
+	${1:name} <- R6::R6Class("${1:name}",
+				var = NULL,
 				public = list(
-				 initialize = function() {
+				 initialize = function(var) {
 				 },
+				 print = function(...) {
+						print(paste("class print method"))
+				},
 				 ${2:function} = function(x) {
 				 		${0}
 				 }
