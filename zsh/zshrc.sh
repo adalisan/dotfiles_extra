@@ -30,6 +30,9 @@ setopt share_history # setopt inc_append_history
 alias v='eval $(command -v nvim)'
 alias cp='cp -iv' # 'cp' prompt and verbose
 alias mv='mv -iv' # 'mv' prompt and verbose
+alias ll='ls -al'
+alias la='ls -A'
+
 mkdir -p /tmp/log
 
 # Functions
