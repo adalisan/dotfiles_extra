@@ -172,6 +172,10 @@ snippet trcun
 snippet brow
 	browser()
 
+# find options
+snippet optionsf
+	names(options())[grep("${1:regex}", names(options()))]
+
 snippet optionsr
 	options(error=recover)
 
