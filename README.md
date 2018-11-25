@@ -16,6 +16,19 @@ git clone git@github.com:strboul/dotfiles.git
 cd dotfiles && ./deploy.sh
 ```
 
+## Brewfile
+
+In the `~/dotfiles` directory, run to install everything:
+```
+brew bundle
+```
+
+For macOS, brew offers a nice package manager to install command-line and binary
+applications. See
+(homebrew-bundle)[https://github.com/Homebrew/homebrew-bundle/blob/master/README.md]
+and
+(homebrew-cask)[https://github.com/Homebrew/homebrew-cask/blob/master/USAGE.md].
+
 ## Screenshots
 
 <p style="text-align:left;"><a
@@ -30,4 +43,5 @@ height="60%"></a></p>
 + https://github.com/jimhester/dotfiles/
 
 + https://github.com/fatih/dotfiles
+
 
