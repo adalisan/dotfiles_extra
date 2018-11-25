@@ -87,6 +87,9 @@
 	command! GoyoMode call GoyoMode()
 	nmap \p :GoyoMode<CR>
 
+" vim-markdown folding disable
+	let g:vim_markdown_folding_disabled = 1
+
 " Disable R_assign <- placement by (_) underscore Nvim-R
 	let R_assign = 0
 
