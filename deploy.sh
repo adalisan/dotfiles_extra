@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-if [[ ! -d "$HOME"/dotfiles ]]; then
+if [[ ! -d "$HOME"/configurations-linux/dotfiles_extra ]]; then
 	echo >&2  "dotfiles not found in the home directory."
 	exit 0
 fi
 
 echo "Updating configuration"
-(cd ~/dotfiles && git pull && git submodule update --init --recursive)
+(cd ~/configurations-linux/dotfiles_extra && git pull && git submodule update --init --recursive)
 
 # Source: https://stackoverflow.com/a/27875395/
 user_prompt() {
@@ -49,13 +49,11 @@ dashes="$(printf -- '-%.0s' $(seq 49))"
 
 echo "$dashes"
 echo "Configure and install (if not existed) the CLI essentials:"
-echo "zsh, nvim, tmux, and fzf"
+echo "zsh, tmux, and fzf"
 echo
 user_prompt "Let's get started? [y/N]"
 
 check_for_software zsh
-echo
-check_for_software nvim
 echo
 check_for_software tmux
 echo
@@ -65,13 +63,13 @@ echo
 FZF="$(command -v fzf)"
 if [[ "$("$FZF" 2> /dev/null)" == "" ]]; then
 	echo "fzf not found. Installing..."
-	source "$HOME/dotfiles/zsh/plugins/fzf/install"
+	source "$HOME/configurations-linux/dotfiles_extra/zsh/plugins/fzf/install"
 else
 	echo "fzf is installed."
 fi
 
 echo "Press [ENTER] to complete linking."
-source "$HOME"/dotfiles/zsh/link.sh
+source "$HOME"/configurations-linux/dotfiles_extra/zsh/link.sh
 
 # change the default shell:
 check_default_shell() {
