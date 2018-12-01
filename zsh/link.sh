@@ -12,28 +12,19 @@ make_link(){
 	  ln -s "$2" "$1"
 }
 
-make_link "$HOME"/.zshrc "$HOME"/dotfiles/zsh/zshrc.sh
-make_link "$HOME"/.tmux.conf "$HOME"/dotfiles/tmux/tmux.conf
+make_link "$HOME"/.zshrc "$HOME"/configurations_linux/dotfiles_extra/zsh/zshrc.sh
+make_link "$HOME"/.tmux.conf "$HOME"/configurations_linux/dotfiles_extra/tmux/tmux.conf
 
-make_link "$HOME"/.ripgreprc "$HOME"/dotfiles/tools/ripgreprc
+make_link "$HOME"/.ripgreprc "$HOME"/configurations_linux/dotfiles_extra/tools/ripgreprc
 
-make_link "$HOME"/.gitconfig "$HOME"/dotfiles/git/gitconfig
-make_link "$HOME"/.gitignore "$HOME"/dotfiles/git/gitignore
 
 ## RStudio snippets link
 for snippet in \
 	rstudio/{r.snippets,c_cpp.snippets,markdown.snippets} ; do
-	 make_link "$HOME"/.R/snippets/"${snippet##*/}" "$HOME"/dotfiles/"$snippet"
+	 make_link "$HOME"/.R/snippets/"${snippet##*/}" "$HOME"/configurations_linux/dotfiles_extra/"$snippet"
 done
 
-make_link "$HOME"/.Rprofile "$HOME"/dotfiles/R/Rprofile.R
+make_link "$HOME"/.Rprofile "$HOME"/configurations_linux/dotfiles_extra/R/Rprofile.R
 
-make_link "$HOME"/.config/nvim/init.vim "$HOME"/dotfiles/nvim/init.vim
-make_link "$HOME"/.config/nvim/UltiSnips "$HOME"/dotfiles/nvim/ultisnips/
 
-# Install nvim colorschemes
-make_link "$HOME"/.config/nvim/colors/ "$HOME"/dotfiles/nvim/colors/* # (linking all files)
 
-# Install nvim plugins
-NVIM=$(command -v nvim)
-$NVIM +PlugInstall +qall
