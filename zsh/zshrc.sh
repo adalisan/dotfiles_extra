@@ -69,3 +69,6 @@ export RIPGREP_CONFIG_PATH="$HOME"/.ripgreprc
 # fzf (managed by fzf):
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
+
+export PATH=$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
