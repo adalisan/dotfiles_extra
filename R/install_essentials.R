@@ -1,0 +1,4 @@
+#!/usr/bin/env Rscript
+install.packages(c("igraph", "assertthat", "backports", "base64enc", "BH", "colorspace", "data.table", "dbplyr", "devtools", "digest", "doParallel", "dplyr", "evaluate", "feather", "forcats", "foreach", "formatR", "gdata",  "ggmap", "ggplot2", "git2r", ", "googleVis", "gtable", "gtools", "gtrendsR", "haven", "highr", "hms", "htmltools", "httr", "igraph", "IRdisplay", "IRkernel", "irlba", "iterators",  "jsonlite", "knitr", "lintr", "lme4", "lmtest", "lubridate", "magrittr",  "markdown", "RColorBrewer", "Rcpp", "RcppEigen", "readr", "readxl",  "reshape2",  "RgoogleMaps",   "rmarkdown",  "rstudioapi", "rvest",  "stringdist", "stringi", "stringr", "testthat", "tibble", "tidyr", "tidytext", "tidyverse", "tokenizers",  "whisker", "withr", "xml2", "yaml", "zoo"))
+devtools::install_github('IRkernel/IRkernel')
+IRkernel::installspec()
