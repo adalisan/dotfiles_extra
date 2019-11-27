@@ -9,6 +9,10 @@ fi
 # Settings
 
 export ZSH_DIR=$HOME/configurations-linux/dotfiles_extra/zsh
+[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+emulate sh -c 'source ~/.aliases'
+emulate sh -c 'source ~/.bash_aliases'
+#emulate sh -c 'source ~/.bashrc'
 source $ZSH_DIR/plugins/fixls.zsh
 
 source $ZSH_DIR/plugins/oh-my-zsh/lib/history.zsh
